@@ -1,4 +1,4 @@
-package com.gmarket.coupon_system_api.domain;
+package com.gmarket.consumer.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
