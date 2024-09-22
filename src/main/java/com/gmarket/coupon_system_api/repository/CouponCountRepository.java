@@ -1,5 +1,6 @@
 package com.gmarket.coupon_system_api.repository;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -15,6 +16,11 @@ public class CouponCountRepository {
 
     public CouponCountRepository(RedisTemplate<String, String> redisTemplate) {
         this.redisTemplate = redisTemplate;
+    }
+
+    @PostConstruct
+    void init() {
+        this.redisTemplate.delete("coupon_count");
     }
 
     public Long increment() {
